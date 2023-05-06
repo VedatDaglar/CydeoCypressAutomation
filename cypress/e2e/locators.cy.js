@@ -15,10 +15,7 @@ describe('Context: My First Tests', () => {
     
     it('Check different locators strategies', () => {
         //By CSS locator (xpath doesn't work)
-        cy.get("input[name='username']").type('CydeoStudent');  // every statement creates an object 
-                                                                //to be interacted and next command 
-                                                                //makes operation to the object created 
-                                                                //at the previous statement
+        cy.get("input[name='username']").type('CydeoStudent');  // every statement creates an object to be interacted and next command makes operation to the object created at the previous statement 
 
         cy.get("[type='text']").clear(); // clear what is typed
 
