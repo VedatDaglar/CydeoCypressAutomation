@@ -40,6 +40,32 @@ describe('Context: My First Tests', () => {
 
     })  
 
+    it('Check finding elements by travelling through DOM', () => {
+
+        // Travel to find the login button : locate usernam box - got to parent form - then find button
+        cy.get('input[name="username"]').parents('form').find('button').should('contain','Login').click();
+    })
+
+
+
+    it.only('Check different type of Assertions', () => {
+
+        // Cypress itself bundles assertions provided by Chai, Sino and JQuery libraries
+
+
+        // Should Assertion : does the Assertion directly ont the object itself
+        cy.get('#wooden_spoon')
+        .should('contain','Login')
+        .and('have.class','btn btn-primary');
+
+        // expect assertion: creates a subject of our test, then you implement different actions
+        cy.get('#wooden_spoon').then((buttonElement) => {
+
+            expect(buttonElement).to.have.text('Login');
+            expect(buttonElement).to.have.class('btn btn-primary');
+        })
+
+    })
 
     
 
