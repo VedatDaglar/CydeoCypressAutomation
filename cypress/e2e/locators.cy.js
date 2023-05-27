@@ -42,7 +42,7 @@ describe('Context: My First Tests', () => {
       .click();
   });
 
-  it.only('Check different type of Assertions', () => {
+  it('Check different type of Assertions', () => {
     // Cypress itself bundles assertions provided by Chai, Sino and JQuery libraries
 
     // Should Assertion : does the Assertion directly ont the object itself

@@ -70,7 +70,7 @@ describe('Cypress WebTable Tests', { baseUrl: 'https://demoqa.com' }, () => {
     });
  });
 
- xit('Check adding a new record - Bad code practice', () => {
+ it('Check adding a new record - Bad code practice', () => {
     // click on add button
     cy.get('#addNewRecordButton').click();
     // fill form
