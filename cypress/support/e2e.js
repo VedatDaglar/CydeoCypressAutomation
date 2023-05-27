@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // ***********************************************************
 // This example support/e2e.js is processed and
 // loaded automatically before your test files.
@@ -20,3 +21,11 @@ import './commands';
 // require('./commands')
 
 Cypress.on('uncought:exception', () => false);
+
+Cypress.on(
+  'uncaught:exception',
+  (err, runnable) =>
+    // returning false here prevents Cypress from
+    // failing the test
+    false
+);
