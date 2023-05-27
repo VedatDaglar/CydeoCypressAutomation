@@ -104,13 +104,20 @@ describe('Cypress WebTable Tests', { baseUrl: 'https://demoqa.com' }, () => {
             // cy.log(columnName);
             // cy.log(userData[index]);
             cy.get(`#${columnName}`).type(`${userData[index]}`);
-            cy.get('#submit').click();
         });
+        cy.get('#submit').click();
+        // assert that new record is added
+        cy.get('.rt-tbody')
+        .contains('.rt-tr-group', userData[0])
+        .then((row) => {
+
+        cy.wrap(userData).each((value, index) => {
+        cy.wrap(row).find('.rt-td').eq(index).should('contain', value);
+        });
+
+    });
     });
 
-
-
+  
  });
-
-
 });
