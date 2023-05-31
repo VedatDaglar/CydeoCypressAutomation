@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-classes-per-file */
 /* eslint-disable prettier/prettier */
 // eslint-disable-next-line no-unused-vars
 class Auth {
@@ -17,6 +19,23 @@ class Auth {
 
 const auth = new Auth(); // object of the class we made
 
+class Locators { // we can create another class here, how do we apply findBy annotation of Selenium with Cypress
+
+    get userName (){
+        return cy.get('[name="username"]', {timeout: 10000}); // defining custom timeout for a specific element, this timeout is a dynamic wait, when it finds element, it moves on
+    }
+
+    get password (){
+        return cy.get('[name="password"]', {timeout: 10000}); // defining custom timeout for a specific element
+    }
+
+    get submit (){
+        return cy.get('#wooden_spoon');
+    }
+
+}
+const locators = new Locators();
 module.exports = {
-  auth
+  auth,
+  locators
 }

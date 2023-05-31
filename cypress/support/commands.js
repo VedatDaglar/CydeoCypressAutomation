@@ -30,4 +30,4 @@ Cypress.Commands.add('textExists', (text) => {
   cy.contains(text).should('exist');
 });
 // textExist is the command name, when we are calling this function from another test class:
-// cy.textExists('paramater'), kind of like utility methods we used before, plus it overrides existing command 
+// cy.textExists('paramater'), kind of like utility methods we used before, plus it overrides existing command

@@ -1,8 +1,7 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-undef */
 export class NavigateTo {
   loginPage() {
-    cypress.visit(Cypress.env('login'));
+    cy.visit(Cypress.env('login')); // Cypress.env : thakes the parameter takes the code and defines the paranthesis
   }
 }
 
